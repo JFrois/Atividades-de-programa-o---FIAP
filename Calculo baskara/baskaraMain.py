@@ -3,3 +3,29 @@
 'Para fazer a verificação de cada uma das condições e, posteriormente, realizar os cálculos necessários, podemos utilizar um desvio condicional encadeado ou utilizar o elif. Vamos dar uma olhada em como ficaria a estrutura em cada um dos casos?'
 
 'Agora, dentro dos desvios, incluiremos os cálculos de x. A fórmula que aprendemos na escola é 𝑥 =−𝑏±√𝑏2−4𝑎𝑐2𝑎que já calculamos anteriormente., na qual o que está dentro da raiz é o delta E por falar em raiz, cada linguagem de programação possui sua função própria para realizar essa operação. No caso do Python, precisamos importar a classe mathe depois usar a função math.sqrt.Para importar a classe math, escrevemos na primeira linha do nosso script: import math.'
+
+#Import math
+import math
+
+#Usuário insere os valores de A, B e C
+A = float(input("Por favor, insira o valor de A: "))
+B = float(input("Por favor, insira o valor de B: "))
+C = float(input("Por favor, insira o valor de C: "))
+
+#Calculo de delta
+delta = B**2 - 4*A*C
+print(f"O valor de delta é {delta}")
+
+#Verificação de delta   
+
+if delta > 0:
+    x1 = (-B + math.sqrt(delta)) / (2*A)
+    x2 = (-B - math.sqrt(delta)) / (2*A)
+    print(f"Os valores de x são {x1} e {x2}")
+    
+elif delta == 0:
+    x = -B / (2*A)
+    print(f"O valor de x é {x}")
+    
+else:
+    print("Não existe valor real para x")
