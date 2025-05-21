@@ -6,7 +6,8 @@ import OperadoresLogicos.EscolhaRoupa as escolhaRoupa
 import OperadoresLogicos.Patinete as calculo_velocidadeMedia
 from Lacos_For_and_While import *
 import Lacos_For_and_While.Alimentacao as alimentacaoMain
-import Lacos_For_and_While.Transacao_financeira as transacao_financeira
+import Lacos_For_and_While.Transacao_financeira.transacao_financeira as transacao_financeira
+import Lacos_For_and_While.Fibonacci.jogo_fibonacci as fibonacci
 
 mensagemInicial = "Olá, seja bem-vindo ao nosso programa!"
 mensagemFinal = "Obrigado por usar nosso programa!"
@@ -22,11 +23,12 @@ def menu():
         print('5 - Patinete')
         print('6 - Alimentação')
         print('7 - Transação financeira')
-        print('8 - Sair')
+        print('8 - Jogo Fibonacci')
+        print('9 - Sair')
         
         try:
             opcao = int(input('Digite sua opção: '))
-            if 1 <= opcao <= 7:
+            if 1 <= opcao <= 8:
                 return opcao
             else:
                 raise ValueError
@@ -40,7 +42,7 @@ def main():
 
     while True:
         opcao = menu()
-        if opcao == 8:
+        if opcao == 9:
             print(mensagemFinal)
             print('----------------------------------')
             break
@@ -58,6 +60,8 @@ def main():
             alimentacaoMain.main()
         elif opcao == 7:
             transacao_financeira.main()
+        elif opcao == 8:
+            fibonacci()
 
 if __name__ == '__main__':
     main()
