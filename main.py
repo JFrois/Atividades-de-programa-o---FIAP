@@ -6,6 +6,7 @@ import OperadoresLogicos.EscolhaRoupa as escolhaRoupa
 import OperadoresLogicos.Patinete as calculo_velocidadeMedia
 from Lacos_For_and_While import *
 import Lacos_For_and_While.Alimentacao as alimentacaoMain
+import Lacos_For_and_While.Transacao_financeira as transacao_financeira
 
 mensagemInicial = "Olá, seja bem-vindo ao nosso programa!"
 mensagemFinal = "Obrigado por usar nosso programa!"
@@ -20,7 +21,8 @@ def menu():
         print('4 - Escolha roupa')
         print('5 - Patinete')
         print('6 - Alimentação')
-        print('7 - Sair')
+        print('7 - Transação financeira')
+        print('8 - Sair')
         
         try:
             opcao = int(input('Digite sua opção: '))
@@ -38,7 +40,7 @@ def main():
 
     while True:
         opcao = menu()
-        if opcao == 7:
+        if opcao == 8:
             print(mensagemFinal)
             print('----------------------------------')
             break
@@ -54,6 +56,8 @@ def main():
             calculo_velocidadeMedia.main()
         elif opcao == 6:
             alimentacaoMain.main()
+        elif opcao == 7:
+            transacao_financeira.main()
 
 if __name__ == '__main__':
     main()

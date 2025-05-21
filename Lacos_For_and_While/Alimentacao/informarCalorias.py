@@ -25,6 +25,8 @@ def escolha():
         
         except ValueError:
             print(mensagemErro)
+            return main()
+        print('----------------------------------')
             
         if opcao == 1:
             cafedaManha = input('Digite o que você comeu no café da manhã: ')
