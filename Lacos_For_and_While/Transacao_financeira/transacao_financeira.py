@@ -1,4 +1,3 @@
-import pandas as pd
 import datetime
 
 #Mensagens do sistema
@@ -37,7 +36,7 @@ def main():
             return main()
             
         if opcao == 1:
-            adicionar_saldo = float(input('Por favor, digite o seu saldo inicial: '))
+            adicionar_saldo = float(input('Por favor, digite o seu saldo: '))
             
             if adicionar_saldo < 0:
                     print(mensagemErroValor)
@@ -50,14 +49,16 @@ def main():
                 print(mensagemErroTransacao)
                 return main()
             
-            data_transacao = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            transacao.append(valor_transacao and data_transacao)
+            data_transacao = input('Digite a data da transação (dd/mm/aaaa): ')
+            nova_transacao = {'valor': valor_transacao, 'data': data_transacao}
+            transacao.append(nova_transacao)
             saldo -= valor_transacao
             print(mensagemTransacao)
             
         elif opcao == 2:
-                print(f'Extrato: {saldo}')
-        
+            print(f'Extrato: {transacao}')
+
+            
         else:
             print(mensagemFinal)
             break  
